@@ -1,0 +1,46 @@
+.user{
+    width: 500px;
+    margin: 3rem auto;
+    border-radius: 10px;
+    background: var(--bg-b);
+    padding: 1rem 2rem;
+    
+    text-align: right;
+    .header {
+        font-size: 1.7rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .social{
+        
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        .icon{
+            width: 1rem;
+            height: 1rem;
+            background-size: 100% 100%;
+            margin-right: .5rem;
+        }
+        .login-social{
+            width: 180px;
+            display: flex;
+            align-items: center;
+        }
+
+    }
+    .form{
+       
+        margin: auto;
+        a{
+            align-self: flex-end;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            &:hover{
+                color: var(--colorActive);
+            }
+        }
+    }
+}

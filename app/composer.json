@@ -1,0 +1,24 @@
+{
+    "name": "paultran/app",
+    "authors": [
+        {
+            "name": "Paul Tran",
+            "email": "paultran@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "app\\": "./"
+        }
+
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.2",
+        "google/apiclient": "2.0",
+        "mongodb/mongodb": "^1.9",
+        "phpmailer/phpmailer": "^6.5"
+        
+        
+        
+    }
+}

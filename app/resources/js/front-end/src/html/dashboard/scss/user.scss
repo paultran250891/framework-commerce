@@ -1,0 +1,51 @@
+#dashboard-user{
+    .content{
+        all: unset;
+    
+    }
+    .header{
+        height: 3rem;
+        display: flex;
+        font-size: 1.2rem;
+        color: #0062cc;
+        font-weight: 600;
+    }
+    .detail-user{
+        width: 100%;
+        display: grid;
+        grid-template-columns:   repeat(12, 1fr);
+        justify-items: center;
+        align-items: center;
+        margin-top: .1rem;
+        background-color: var(--bg-c);
+        padding: .5rem;
+        // border-radius: 10px;
+        .img{
+            width: 100%;
+            grid-column: span 2;
+            text-align: center;
+        }
+        .img-show{
+            background-size: 100% 100%;
+            width: 3rem;
+            height: 3rem;
+            margin: auto;
+            border-radius: 50%;
+        }
+        .email{
+            grid-column: span 4;
+        }
+        .name{
+            grid-column: span 3;
+        }
+        .unactive{
+            color: white;
+            border: 1px solid var(--colorError);
+            background: var(--colorError);  
+        }
+        .sort{
+            display: flex;
+            cursor: pointer;
+        }
+    }
+}

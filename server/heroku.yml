@@ -1,0 +1,71 @@
+version: "3.0"
+#NETWORK
+networks:
+  net-web:
+    driver: bridge
+
+#VOLUMES
+volumes:
+  web-site:
+    driver_opts:
+      device: /home/paultran/Desktop/web/framework-ecommerce/app
+      type: bind
+      o: bind
+services:
+  #container php
+  my-php:
+    # name CTN
+    container_name: web-php
+    build:
+      dockerfile: Dockerfile
+      context: .
+    hostname: php
+    restart: always
+    networks:
+      - net-web
+    volumes:
+      - web-site:/home/web
+  #container NGINX
+  my-nginx:
+    container_name: proxy-nginx
+    image: "nginx:latest"
+    hostname: nginx
+    restart: always
+    networks:
+      - net-web
+    volumes:
+      - web-site:/home/web
+      - ./nginx/app.conf:/etc/nginx/conf.d/default.conf
+
+    ports:
+      - "80:80"
+      - "443:443"
+  #container MySql
+  my-sql:
+    container_name: db-mysql
+    image: "mysql:latest"
+    hostname: mysql
+    restart: always
+    networks:
+      - net-web
+    command: >
+      bash -c "
+      chmod 644 /etc/mysql/my.cnf
+      && /entrypoint.sh mysqld"
+    volumes:
+      - ./mysql/db:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=121212
+      - MYSQL_DATABASE=e_commerce
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=e_commerce1212
+
+  my-mongo:
+    container_name: db-mongo
+    image: mongo:5.0.2
+    restart: always
+    networks:
+      - net-web
+    volumes:
+      - ./mongo/db:/data/db

@@ -1,0 +1,40 @@
+<div class="dashboard-product">
+    <div class="show-row">
+        <label for="">Hien so dong:</label>
+        <select hdclick="showRow(dom)"  name="" id="">
+            <option selected value="2">2</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+        </select>
+
+        <button hdClick="add()" class="add-product">+ Them San Pham Moi</button>
+    </div>
+    <div class="header product-detail">
+        <div class="stt ">STT</div>
+        <div class="name ">Ten san pham</div>
+        <div class="img ">Anh dai dien</div>
+        <div class="options ">Options</div>
+        <div class="delete ">Xoa</div>
+        <div class="edit ">Sua</div>
+    </div>
+
+    <div class="ctn-product">
+        <div item="products" class="product-detail">
+            <div class="stt ">{stt}</div>
+            <div class="name ">{name}</div>
+            <div class="img ">
+                <div class="show-img " style="background-image: url('{img}');"></div>
+            </div>
+            <div class="options ">
+                <ul class="show-options"> {options}</ul>
+            </div>
+            <button hdclick="delete('{id}')" class="delete ">Xoa</button>
+            <button hdclick="edit('{id}')" class="edit ">Sua</button>
+        </div>
+    </div>
+
+    <div class="ctn-pagination">
+        
+    </div>
+
+</div>

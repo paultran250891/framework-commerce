@@ -1,0 +1,53 @@
+<div id="dashboard-cart">
+    <div  class="limit">
+        <span>Hien so dong:</span>
+        <select hdClick="hdLimit(dom)">
+            <option selected value="2">2</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+        </select>
+    </div>
+    <div class="header">
+        <div class="detail-cart">
+            <div class="email sort">Email</div>
+            <div class="name sort">Khach hang</div>
+            <div class="addr sort">dia chi</div>
+            <div class="phone sort">Phone</div>
+            <div hdClick="filter( 'create_at' ,dom)" data-sort="1" class="date sort">Ngay
+                <span class="material-icons">
+                    sort
+                </span>
+
+            </div>
+            <div class="see">Chi tiet</div>
+        </div>
+    </div>
+
+    <div class="ctn-detail-cart">
+        <div item="carts" class="detail-cart">
+            <div class="email sort">{email}</div>
+            <div class="name sort">{name}</div>
+            <div class="addr sort">{addr}</div>
+            <div class="phone sort">{phone}</div>
+            <div class="date sort">{date}</div>
+            <button hdClick="detail('{id}')" class="see sort">xem</button>
+        </div>
+    </div>
+    <div class="ctn-pagination">
+
+    </div>
+
+    <div class="modal-cart">
+        <div hdClick="close()" class="close">&#x2715</div>
+        <div class="cart-product">
+            <div item="detail" class="detail">
+                <div class="img" style="background-image: url('{img}');"></div>
+                <div class="name"><span class="item-1">{name}</span><span>({option})</span></div>
+                <div class="quantity">{qty}</div>
+                <div class="price">{price}<sup>d</sup></div>
+                <div class="total">{total}<sup>d</sup></div>
+            </div>
+        </div>
+    </div>
+
+</div>

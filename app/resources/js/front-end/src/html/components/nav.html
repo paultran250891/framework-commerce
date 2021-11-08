@@ -1,0 +1,36 @@
+<div id="nav">
+    <div class="ctn-nav">
+        <div class="nav-start nav-layout">
+            <div class="nav-item menu">
+                <span class="material-icons" >menu</span>
+            </div>
+            <div class="nav-item logo">
+                <div class="img" style="background-image: url('./img/logo.jpg')"></div>
+            </div>
+        </div>
+        <div class="nav-center nav-layout">
+            <div form id="form-nav-search" class="form">
+                <div field name="" class="ctn-search">
+                    <input class="input" placeholder="Tìm kiếm" type="text" />
+                    <button type="submit"><span class="material-icons" >search</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="nav-end nav-layout">
+            <div class="ctn-check-theme nav-item">
+                <input id="checbox-change-theme" type="checkbox" checked />
+                <label class="checbox-change-theme" for="checbox-change-theme"></label>
+            </div>
+            <a href="/cart" class="nav-item cart">
+                <span class="material-icons " >shopping_bag</span>
+                <p class="total-count-cart" item="count" >{count}</p>
+            </a>
+            <a href="/user?action=login" class="nav-item show-logout">
+                <span class="material-icons" >person</span>
+            </a>
+            <div class="nav-item show-login">
+                <div class="img" item="img" style="background-image: url('{img}')"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div id="img-modal" class="modal">
+
+    <div hdClick="close()" class="close">&#x2715</div>
+    <div class=" ctn-content">
+        <div class="upload">
+            <input class="value-file" type="file">
+            <button hdclick="uploadSubmit()" class="submit-upload">
+                Upload
+            </button>
+        </div>
+        <div class="ctn-show-img">
+            <div hdClick="callbackImg('{name}')" item="img" class="img" style="background-image: url('{name}');"></div>
+        </div>
+    </div>
+
+</div>

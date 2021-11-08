@@ -1,0 +1,47 @@
+.modal-option-product{
+    // display: none;
+    position: absolute; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+    .ctn-option-product{
+        margin: 3rem auto;
+        padding: 1rem;
+        background: var(--bg-b);
+        width: 80%;
+        border-radius: 10px;
+        button{
+            margin-top: 1rem;
+        }
+        .checkbox{
+            margin-bottom: .5rem;
+            font-size: 1.5rem;
+
+        }
+        .ctn-type{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            .title{
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+        }
+        .title{
+            color: #0062cc;
+        }
+        .ctn-number-option{
+            input{
+                width: 4rem;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+    }
+}

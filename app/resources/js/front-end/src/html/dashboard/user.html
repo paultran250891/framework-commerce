@@ -1,0 +1,35 @@
+<div id="dashboard-user">
+    <div class="header">
+        <div class="detail-user">
+            <div class="img" >Anh dai dien</div>
+            <div hdClick="filter('name', dom)" data-sort="1"  class="name sort">Ten<span class="material-icons">
+                sort
+                </span></div>
+            <div hdClick="filter('email', dom)" data-sort="1" class="email sort">Email<span class="material-icons">
+                sort
+                </span></div>
+            <div hdClick="filter('active', dom)" data-sort="1" class="active sort">Active<span class="material-icons">
+                sort
+                </span></div>
+            <div class="delete">Xoa</div>
+            <div class="edit">Sua</div>
+        </div>
+    </div>
+    
+        
+    <div class="content">
+        <div item="user" class="detail-user">
+            <div class="img">
+                <div class="img-show" style="background-image: url('{img}');"></div>
+            </div>
+            
+            <div  class="name">{name}</div>
+            <div  class="email">{email}</div>
+            <button class="{active}">{active}</button>
+            <button hdClick="delete('{id}', '{email}')" class="">xoa</button>
+            <button hdClick="edit('{id}')" class="">sua</button>
+        </div>
+    </div>
+    <div class="ctn-pagination"></div>
+
+</div>

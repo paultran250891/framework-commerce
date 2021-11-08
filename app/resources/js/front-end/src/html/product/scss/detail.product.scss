@@ -1,0 +1,188 @@
+.ctn-product-detail {
+    width: 1000px;
+
+    margin: auto;
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    .slide {
+        grid-column: span 3;
+        background: var(--bg-c);
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 1rem;
+        .show-img{
+            padding-top:80%;
+            width: 100%;
+            border-radius: 10px;
+        }
+        .ctn-img{
+            width: 100%;
+            margin-top: 1rem;
+            
+            display: flex;
+            align-items: stretch;
+            justify-content: stretch;
+
+            .detail-img{
+                cursor: pointer;
+                padding-top: 15%;
+            }
+
+        }
+    }
+    .information-product {
+        border-radius: 10px;
+        padding: 1rem;
+        display: grid;
+        background: var(--bg-c);
+        grid-column: span 3;
+        h1 {
+            text-align: center;
+        }
+        .total-rate-customer {
+            .item-rate {
+                border-right: 1px solid;
+
+                padding-right: 1rem;
+            }
+        }
+        .item-1 {
+            width: 20%;
+            // font-size: 1.5rem;
+        }
+        .item-2 {
+            width: 80%;
+            font-size: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+
+            .choose {
+
+                font-size: 1rem;
+                margin-top: 0.5rem;
+                padding: 0.5rem;
+            }
+        }
+        .quantity-product {
+            
+            margin: 1rem;
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+            input {
+                width: 2.5rem;
+                height: 2.5rem;
+                text-align: center;
+                font-size: 1rem;
+                border: none;
+                border-radius: 5px;
+            }
+            .item-2{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+               
+            }
+        }
+        .option-product {
+            margin: 0 1rem;
+            span {
+                border: 1px solid;
+                padding: 0.5rem;
+                margin-right: 2rem;
+                cursor: pointer;
+            }
+        }
+        .price-product {
+            margin: 1rem;
+        }
+        .add-cart-product {
+            align-self: end;
+            margin-bottom: 0;
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+    .content-product {
+        padding: 1rem;
+        border-radius: 10px;
+        background: var(--bg-c);
+        grid-column: span 4;
+        h1 {
+            text-align: center;
+        }
+        .show-type-product {
+            width: 50%;
+            display: flex;
+            div {
+                width: 20%;
+                height: 2rem;
+                border: 1px solid;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .value {
+                width: 80%;
+            }
+        }
+    }
+    .form {
+        display: flex;
+        border: none;
+        margin: 0;
+        margin-top: 2rem;
+        padding: 0;
+        background: var(--bg-c);
+        width: 100%;
+        justify-content: center;
+        align-items: flex-end;
+        h1 {
+            display: none;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            height: 3rem;
+        }
+        .field {
+            margin: 0;
+            background: var(--bg-c);
+
+            width: 80%;
+            margin-left: auto;
+            input {
+                width: 100%;
+                border-radius: 10px;
+                margin-right: 0;
+            }
+        }
+    }
+    .show-comment {
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-left: 0;
+
+        .img-detail {
+            width: 3rem;
+            height: 3rem;
+            margin-right: 1rem;
+            border-radius: 50%;
+        }
+        .comment-content {
+            border-radius: 10px;
+            padding: 0.5rem;
+
+            .comment-date {
+                text-align: right;
+            }
+        }
+    }
+}

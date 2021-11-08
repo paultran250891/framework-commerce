@@ -1,0 +1,65 @@
+<div  class="ctn-product-detail">
+    <div item="slide" class="slide">
+        <div class="show-img img" style="background-image: url('/img/product/xiaomi11_1.jpg');"></div>
+        <div class="ctn-img">
+            <div item="imgs" hdclick="showImg('{img}')" class="img detail-img" style="background-image: url('{img}');"></div>
+        </div>
+
+    </div>
+
+    <div  class="information-product">
+
+        <h1 item="name">{name}</h1>
+
+        <div class="total-rate-customer fl ct-c ct-r">
+            <div class="number-rate-star item-rate">
+                <span class="">&starf;</span>
+                <span class="">&starf;</span>
+                <span class="">&starf;</span>
+                <span class="">&starf;</span>
+                <span class="">&starf;</span>
+            </div>
+            <div class="number-rate-comment item-rate">12comment</div>
+            <div class="number-rate-sell item-rate">100sp da ban</div>
+        </div>
+
+        <div class="price-product fl ct-r ct-c">
+            <div class="item-1">Gia ban:</div>
+            <div class="item-2"></div>
+        </div>
+
+        <div class="option-product fl ct-r ct-c">
+            <div  class="item-1">Chon Option:</div>
+            <div  class="item-2">
+                <div item="options" hdClick="choose('{price}', '{_id}', dom,'{img}')" class="choose">
+                    {type}  
+                </div>
+            </div>
+        </div>
+
+        <div class="quantity-product fl ct-r ct-c ">
+            <div class="item-1 ">So luong: </div>
+            <div class="item-2 fl ">
+                <button hdClick="minus()" class=""> - </button>
+                <input hdBlur="number(dom)" class="value-quantity-cart" type="text" value="1">
+                <button hdClick="plus()" class=""> + </button>
+            </div>
+        </div>
+
+        <button hdClick="addCart(dom)" value="" class="add-cart-product fl ct-r ct-c">
+            <span class="material-icons">add_shopping_cart</span><span>Them vao gio hang</span>
+        </button>
+    
+    </div>  
+
+
+    <div class="content-product">
+        <div class="tap-decription">
+            <h1 class="name-title">Mo ta san pham</h1>
+            <div item="content" class="content-product">
+                {content}
+            </div>
+        </div>
+    </div >
+
+</div>

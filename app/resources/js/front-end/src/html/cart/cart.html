@@ -1,0 +1,82 @@
+<div class="cart form">
+    <hr class="letter">
+    <div class="header">
+        <h1 class="title">Phan dia chi</h1>
+        <div class="addr ">
+            <div data-name="name" data-type="input" class="field">
+                <input placeholder=" " type="text" class="value">
+                <label for="" class="label">Nhap Ten</label>
+                <div class="error"></div>
+            </div>
+            <div data-name="phone" data-type="input" class="field">
+                <input placeholder=" "   type="text" class="value">
+                <label class="label" for="">Nhap So Dien thoai</label>
+                <div class="error"></div>
+            </div>
+            <div data-name="addr" data-type="input" class="field">
+                <input placeholder=" "   type="text" class="value">
+                <label class="label" for="">Nhap dia chi</label>
+                <div class="error"></div>
+            </div>
+            <div data-name="note" data-type="input" class="field">
+                <input placeholder=" "   type="text" class="value">
+                <label class="label" for="">Nhap ghi chu</label>
+                <div class="error"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product">
+        <h1 class="title">Phan san pham</h1>
+        <div class="ctn-product">
+            <div item="carts" class="detail">
+                <div class="img" style="background-image: url('{img}');"></div>
+                <div class="name"><span class="item-1">{name}</span><span>({option})</span></div>
+                <div class="quantity">
+                    <button hdClick="minus('{id}')" class="tru"> - </button>
+                    <input hdBlur="blurCart('{id}')" data-id="{id}" value="{qty}" type="text">
+                    <button hdClick="plus('{id}')" class="cong"> + </button>
+                </div>
+                <div class="price">{price}<sup>d</sup></div>
+                <div class="total">{total}<sup>d</sup></div>
+                <button hdClick="remove('{id}')">xoa</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="payment">
+        <h1 class="title">thanh toan</h1>
+        <div class="select">
+            <div hdClick="choose(dom)" data-value="COD" class="choose">COD</div>
+            <div hdClick="choose(dom)" data-value="MOMO" class="choose">MOMO</div>
+            <div hdClick="choose(dom)" data-value="VISA" class="choose">VISA</div>
+            <div data-name="payment" data-type="input" class="field">
+                <input placeholder=" "  value="" type="hidden" class="value value-payment">
+                <div class="error error-payment"></div>
+            </div>
+        </div>
+        <div class="price">
+            <div class="show product">
+                <div class="name">Gia tien:</div>
+                <div item="price" class="number">{price}<sup>d</sup></div>
+            </div>
+            <div class="show shipping">
+                <div class="name">Tien Ship:</div>
+                <div class="number">300000<sup>d</sup></div>
+            </div>
+            <hr>
+            <div class="show total">
+                <div class="name">Tien tra:</div>
+                <div item="total" class="number">{total}<sup>d</sup></div>
+            </div>
+                
+        </div>
+
+    </div>
+    <div>
+        <button hdClick="btnSubmit()">Thanh Toan</button>
+    </div>
+    
+
+</div>

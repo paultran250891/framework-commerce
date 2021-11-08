@@ -1,0 +1,30 @@
+#img-modal{
+    .ctn-show-img{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem;
+        .img{
+            width: 5rem;
+            height: 6rem;
+            background-size: 100% 100%;
+            background-position: center;
+            // border: 1px solid;
+            cursor: pointer;
+            margin-right: 1rem;
+            border-radius: 10px;
+            transition: all .3s;
+            margin-bottom: .5rem;
+            &:hover{
+                background-size: 105% 105%;
+            }
+        }
+    }
+    .upload{
+       
+        margin: 1rem 0 1rem 1rem;
+        input{
+            cursor: pointer;
+        }
+        
+    }
+}
