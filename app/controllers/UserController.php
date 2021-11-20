@@ -4,7 +4,6 @@ namespace app\controllers;
 
 use app\core\App;
 use app\core\controllers\ControllerApi;
-use app\core\lib\Test;
 use app\core\request\Request;
 use app\core\response\Response;
 use app\models\mongodb\collection\e_commerce\User;
@@ -14,7 +13,6 @@ use Exception;
 use Google_Client;
 use Google_Service_Oauth2;
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 
 class UserController extends ControllerApi
 {

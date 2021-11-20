@@ -41,7 +41,7 @@ class AuthMiddleware extends BaseMiddleware
         $this->checkSubmit($action);
         $user =  App::$app->session->get('user');
 
-        if (!is_array($user) || $user['email'] !== 'paultran250891@gmail.com') {
+        if (!is_array($user) || $user['email'] !== 'framework.commerce@gmail.com') {
             $this->mess[self::USER] = "ban khong co quyen dang nhap vao trang nay";
             $this->errors[self::ADMIN] = $action;
             $this->actions[self::ADMIN] = $action;

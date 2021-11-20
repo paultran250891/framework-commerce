@@ -2,6 +2,7 @@
 
 namespace app\models\mongodb\validate;
 
+use app\core\database\mongodb\DatabaseMongodb;
 use app\core\database\mongodb\MongoDb1;
 use app\core\exceptions\NotFoundException;
 use app\core\lib\Test;
@@ -47,9 +48,9 @@ abstract class Validate
                         break;
                     case self::RULE_MATCHDB:
                         $collection = new $value[0]();
-                        $collection->filter = [$attr => $this->$attr];
+                        $collection->filter = [$value[1] => $this->$attr];
                         if ($collection->count() < 1) {
-                            $this->addErrorForRule($attr, $rule, $value[1]);
+                            $this->addErrorForRule($attr, $rule, $value[2]);
                         }
                         break;
                     case self::RULE_MATCH:
@@ -86,7 +87,15 @@ abstract class Validate
     public function loadData(array $data = [])
     {
         foreach ($data as $attr => $value) {
-            $this->{$attr} = $value;
+            if (strpos(substr($attr, -5), '_id')) {
+                if (is_array($value)) {
+                    $this->{$attr} = array_map(fn ($id) => DatabaseMongodb::_id($id), $value);
+                } else {
+                    $this->{$attr} = DatabaseMongodb::_id($value);
+                }
+            } else {
+                $this->{$attr} = $value;
+            }
         }
     }
 

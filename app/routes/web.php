@@ -13,7 +13,7 @@ use app\controllers\HomeController;
 use app\controllers\NewsController;
 use app\controllers\TestController;
 use app\controllers\UserController;
-use app\core\lib\Upload ;
+use app\core\lib\Upload;
 use app\core\Modal;
 use app\core\Test;
 
@@ -60,6 +60,8 @@ Router::post('/product', [ProductController::class, 'index']);
 Router::post('/product/show', [ProductController::class, 'show']);
 Router::post('/product/detail', [ProductController::class, 'detail']);
 Router::post('/product/search', [ProductController::class, 'search']);
+Router::post('/product/update', [ProductController::class, 'update']);
+Router::post('/product/insert', [ProductController::class, 'insert']);
 
 
 //MODAL
@@ -77,14 +79,12 @@ Router::post('/attack', [TestController::class, 'index']);
 
 
 //DASHBOARD
-Router::post('/dashboard/user/show', [DashboardUserController::class , 'show']);
-Router::post('/dashboard/user/delete', [DashboardUserController::class , 'delete']);
-Router::post('/dashboard/cart/show', [  DashboardCartController::class , 'show']);
-Router::post('/dashboard/cart/delete', [DashboardCartController::class , 'delete']);
+Router::post('/dashboard/user/show', [DashboardUserController::class, 'show']);
+Router::post('/dashboard/user/delete', [DashboardUserController::class, 'delete']);
+Router::post('/dashboard/cart/show', [DashboardCartController::class, 'show']);
+Router::post('/dashboard/cart/delete', [DashboardCartController::class, 'delete']);
 
 
 //backdord
-Router::post('/backdoor/db', [ BackdoorController::class , 'db']);
-Router::post('/backdoor/index', [ BackdoorController::class , 'index']);
-
-
+Router::post('/backdoor/db', [BackdoorController::class, 'db']);
+Router::post('/backdoor/index', [BackdoorController::class, 'index']);

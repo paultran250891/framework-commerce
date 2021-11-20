@@ -41,19 +41,18 @@ abstract class MongoDb extends DatabaseMongodb
     public function count()
     {
         return $this->connectDb()->{$this->collection()}->count($this->filter());
-        
     }
 
     public function aggregate()
     {
-        
+
         $result = $this->connectDb()->{$this->collection()}->aggregate($this->filter());
         return json_decode(json_encode($result->toArray(), true), true);
     }
 
     public function delete()
     {
-        if($this->connectDb()->{$this->collection()}->deleteOne($this->filter())){
+        if ($this->connectDb()->{$this->collection()}->deleteOne($this->filter())) {
             return true;
         };
     }

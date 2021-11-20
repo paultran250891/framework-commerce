@@ -1,59 +1,65 @@
 <div id="modal-product" class="">
     <div hdClick="close()" class="close">&#x2715</div>
     <div class="form modal-content-product">
+
         <div data-name="name" data-type="input" class="field">
             <input placeholder=" " type="text" class="value">
             <label class="label" for="">Ten San pham</label>
             <div class="error"></div>
         </div>
+
         <div data-name="url" data-type="input" class="field">
             <input placeholder=" " type="text" class="value">
             <label class="label" for="">Duong dan</label>
             <div class="error"></div>
         </div>
+
         <div data-name="title" data-type="input" class="field">
             <input placeholder=" " type="input" class="value">
             <label class="label" for="">title</label>
             <div class="error"></div>
         </div>
 
-        <div class="options">
-            <select hdClick="addOption(dom)" name="" id="">
-                <option selected disabled>chon loai san pham</option>
+        <div data-name="category_id" data-type="select" class="options field">
+            <select class="value" value="" hdClick="addOption(dom)" name="" id="">
+                <option selected disabled>Loai San Pham: </option>
                 <option item="option" value="{id}">{name}</option>
             </select>
+            <div class="error"></div>
         </div>
+
         <div class="ctn-show-option">
-            <div item="options" class="option">
+            <div item="options" class="option field" data-name="option_{number}" data-type="option">
                 <h1 class="title">Chon Thuoc tinh Option {number}:</h1>
                 {option}
                 <div data-type="input" class="field">
-                    <input placeholder=" " type="input" class="value">
+                    <input data-name="price" placeholder=" " type="input" data-value="" class="value">
                     <label class="label" for="">Nhap Gia</label>
                 </div>
                 <div class="select-img">
-                    <input type="hidden">
                     <button hdClick="showImg(dom)" class="btn-img">Chon anh</button>
-                    <div class="img" style="background-image: url('');"></div>
+                    <div class="img" data-value="" data-name="img" style="background-image: url('');"></div>
                 </div>
             </div>
-
         </div>
 
         <div class="general ctn-show-option">
-            <div item="general" class="">
+            <div item="general" class="field" data-name="general" data-type="option">
                 <h1 class="title">Thuoc tinh chung cho cac option:</h1>
                 {general}
+                <div class="select-img">
+                    <button hdClick="showImg(dom, true)" class="btn-img">Chon anh</button>
+                </div>
             </div>
-
         </div>
 
-        <div data-name="title" data-type="ckeditor" class="field">
+        <div data-name="title" class="field">
             <label for="">Noi dung</label>
-            <textarea class="value" name="" id="insert-product-content"></textarea>
+            <textarea data-name="content" data-type="ckeditor" class="field" name=""
+                id="insert-product-content"></textarea>
             <div class="error"></div>
         </div>
-        <button class="btn-submit">submit</button>
 
+        <button hdClick="submitForm()" class="btn-submit">submit</button>
     </div>
 </div>

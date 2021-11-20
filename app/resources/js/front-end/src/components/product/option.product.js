@@ -1,5 +1,6 @@
 import { App } from "../../core/app";
 import { Render } from "../../core/render/render";
+import { Quantity } from "../quantity/quantity";
 require('../../html/product/scss/option.product.scss')
 
 export class OptionProduct extends Render {
@@ -10,7 +11,6 @@ export class OptionProduct extends Render {
         super()
         this.id = id
         this.html = require('../../html/product/option.product.html').default
-
     }
 
     async setStates() {
@@ -34,11 +34,13 @@ export class OptionProduct extends Render {
         });
         this.render(this.state)
         $('#content').append(this.El)
+        new Quantity(this.El.querySelector('.ctn-quantity'))
+
     }
 
     callbackType() {
         const input = [...this.El.querySelectorAll('[type=checkbox]:checked')].map(ip => ip.value)
-        const number = +this.El.querySelector('.number-option').value
+        const number = +this.El.querySelector('.quantity-value').value
         this.callback(number, input, this.types)
         this.El.remove()
     }

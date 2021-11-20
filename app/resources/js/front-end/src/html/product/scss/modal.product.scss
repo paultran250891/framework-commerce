@@ -76,25 +76,23 @@
         width: 12rem;
         margin: 0;
       }
-
-      .select-img {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        text-align: center;
-
-        margin-top: 1rem;
-        .img {
-          background-size: 100% 100%;
-          width: 4rem;
-          height: 5rem;
-          border-radius: 10px;
-          margin-left: 2rem;
-        }
-      }
     }
     select {
       margin-right: 0.5rem;
+    }
+  }
+  .select-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+    .img {
+      background-size: 100% 100%;
+      width: 4rem;
+      height: 5rem;
+      border-radius: 10px;
+      margin-left: 2rem;
     }
   }
 }

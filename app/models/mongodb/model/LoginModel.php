@@ -27,7 +27,7 @@ class LoginModel extends Validate
         return [
             'email' => [
                 self::RULE_RIQUIRED => [],
-                self::RULE_MATCHDB => [User::class, 'Địa chỉ Email'],
+                self::RULE_MATCHDB => [User::class, 'email', 'Địa chỉ Email'],
                 self::RULE_EMAIL => [],
             ],
             'pass' => [
@@ -56,23 +56,21 @@ class LoginModel extends Validate
         return false;
     }
 
-    public function active($email) : bool
+    public function active($email): bool
     {
         $user = new User();
-        $user->filter= [
+        $user->filter = [
             'email' => $email
         ];
-        if($user->findOne()['active'] == 1){
+        if ($user->findOne()['active'] == 1) {
             App::$app->session->set('user', $user->findOne());
             return true;
         }
-        
+
         return false;
     }
 
     public function login()
     {
-        
     }
-
 }
