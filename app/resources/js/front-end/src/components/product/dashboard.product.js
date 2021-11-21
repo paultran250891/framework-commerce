@@ -2,6 +2,7 @@ import { App } from "../../core/app";
 import { Form } from "../../core/form/form";
 import { Loader } from "../../core/loader/loader";
 import { ImgModal } from "../../core/modal/img.modal";
+import { Modal } from "../../core/modal/modal";
 import { Render } from "../../core/render/render";
 import { Pagination } from "../pagination/pagination";
 import { ModalProduct } from "./modal.product";
@@ -29,12 +30,17 @@ export class DashboardProduct extends Render {
                 limit: this.limit,
             }
         })).response
+        // console.log(products)
         this.states.products = products.map((pro, index) => ({
             ...pro,
             stt: index + 1,
             img: pro.imgs[0],
             id: pro._id.$oid,
-            options: pro.options.reduce((first, curr) => first + `<li>${curr.types.join(' - ') + ' gia: ' + curr.price} </li>`, '')
+            options: pro.options.reduce((first, curr) => first + `<li>
+                ${curr.types.map(
+                type => type.value).join(' - ') +
+                ' gia: ' + curr.price
+                } </li>`, '')
         }))
         this.El.querySelector('.ctn-product').innerHTML = ``
         this.getItemDom('products', this.states.products, '.ctn-product')
@@ -69,6 +75,29 @@ export class DashboardProduct extends Render {
             await addProduct.getDom()
             $('#content').append(addProduct.El)
         })
+    }
+
+    async delete(id, name) {
+        const deleteModal = new Modal()
+        deleteModal.header = 'San Pham'
+        deleteModal.mess = `Ban co muon xoa ${name}!!!`
+        deleteModal.show()
+        deleteModal.confirm = () => {
+            new Loader(async () => {
+                const res = JSON.parse(await App.public.fetch({
+                    url: '/product/delete',
+                    data: { id: id }
+                })).response
+                if (res === 'success') {
+                    const modal = new Modal()
+                    modal.header = 'Xoa San Pham'
+                    modal.mess = 'XOA THANH CONG!!!'
+                    modal.show()
+                    this.setStates()
+                    this.pagination()
+                }
+            })
+        }
     }
 
 }

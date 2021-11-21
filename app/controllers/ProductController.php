@@ -48,12 +48,10 @@ class ProductController extends ControllerApi
                 $category->filter =  [
                     ['$sort' => ['_id' => 1]]
                 ];
-
                 if (!empty($this->filter)) {
                     $match = ['$match' => ['_id' => DatabaseMongodb::_id($this->filter)]];
                     array_push($category->filter, $match);
                 }
-
                 $this->result[0] =   $category->aggregate();
                 break;
             case 'detail':
@@ -65,11 +63,9 @@ class ProductController extends ControllerApi
                 if (!empty($this->req['id'])) {
                     array_push($type->filter, ['$match' => ['category_ids' => DatabaseMongodb::_id($this->req['id'])]]);
                 }
-
                 $this->result[0] = $type->aggregate();
                 break;
             case 'option':
-
                 $option = new Option();
                 $filters = $option->getOption();
                 $filter = [];
@@ -91,18 +87,13 @@ class ProductController extends ControllerApi
                     $limit['$limit'] = $this->filter['limit'];
                     array_push($filters, $skip, $limit);
                 }
-
                 if (!empty($this->filter['count'])) {
                     array_push($filters, [
                         '$group' => ['_id' => null, 'count' => ['$sum' => 1]]
                     ]);
                 }
-
-
                 $option->filter = $filters;
-
                 return $this->result[0] = $option->aggregate();
-
             case 'url':
                 $url = new Url();
                 return $this->result[0] = $url->find($this->filter);
@@ -239,5 +230,16 @@ class ProductController extends ControllerApi
 
     public function delete()
     {
+        $id =  DatabaseMongodb::_id($this->req['id']);
+        $option = new Option();
+        $detail = new Detail();
+        $url = new Url();
+        $detail->filter = ['_id' => $id];
+        $option->filter = ['detail_id' => $id];
+        $url->filter = ['_id' => $detail->findOne(1)['url_id']];
+        $url->delete();
+        $option->delete();
+        $detail->delete();
+        $this->result[0] = 'success';
     }
 }

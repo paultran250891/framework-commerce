@@ -18,10 +18,13 @@ abstract class MongoDb extends DatabaseMongodb
         return json_decode(json_encode($result->toArray(), true), true);
     }
 
-    public function findOne()
+    public function findOne($n = null)
     {
         $option = ['projection' => $this->option()];
         $result = $this->connectDb()->{$this->collection()}->findOne($this->filter(), $option);
+        if ($n === 1) {
+            return $result;
+        }
         return json_decode(json_encode($result, true), true);
     }
 

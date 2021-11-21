@@ -69,8 +69,8 @@ class Option extends Mongodb
                 'options.types.category_ids' => 0,
                 'option_imgs' => 0,
             ]],
-            ['$sort' => ['_id'=> 1]]
-           
+            ['$sort' => ['_id' => 1]]
+
         ];
     }
 

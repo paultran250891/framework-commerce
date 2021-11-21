@@ -62,6 +62,7 @@ Router::post('/product/detail', [ProductController::class, 'detail']);
 Router::post('/product/search', [ProductController::class, 'search']);
 Router::post('/product/update', [ProductController::class, 'update']);
 Router::post('/product/insert', [ProductController::class, 'insert']);
+Router::post('/product/delete', [ProductController::class, 'delete']);
 
 
 //MODAL
