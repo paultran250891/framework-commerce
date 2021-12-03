@@ -17,7 +17,7 @@ export class ImgModal extends Render {
     async setState() {
         const res = await App.public.fetch({
             url: '/upload/show',
-            data: { name: 'product' }
+            data: { name: this.name.replace('/', '') }
         })
         this.states.img = JSON.parse(res).filter(img => img != '.' && img != '..').map(img => ({
             name: `/img/${this.name + img}`

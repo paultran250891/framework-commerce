@@ -7,6 +7,7 @@ use app\controllers\BackdoorController;
 use app\core\router\Router;
 use app\controllers\ProductController;
 use app\controllers\CartController;
+use app\controllers\ChatController;
 use app\controllers\dashboard\DashboardCartController;
 use app\controllers\dashboard\DashboardUserController;
 use app\controllers\HomeController;
@@ -54,6 +55,12 @@ Router::post('/cart/delete', [CartController::class, 'delete']);
 //NEWS
 Router::post('/news', [NewsController::class, 'index']);
 Router::post('/newsdetail', [NewsController::class, 'detail']);
+Router::post('/news/insert', [NewsController::class, 'insert']);
+Router::post('/news/delete', [NewsController::class, 'delete']);
+Router::post('/news/show', [NewsController::class, 'show']);
+
+
+
 
 //PRODUCT
 Router::post('/product', [ProductController::class, 'index']);
@@ -65,8 +72,11 @@ Router::post('/product/insert', [ProductController::class, 'insert']);
 Router::post('/product/delete', [ProductController::class, 'delete']);
 
 
-//MODAL
-Router::get('/modal/img', [Modal::class, 'img']);
+
+
+
+//CHAT
+Router::post('/chat', [ChatController::class, 'index']);
 
 
 //UPLOAD 

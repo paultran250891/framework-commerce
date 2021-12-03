@@ -146,11 +146,16 @@ class ProductController extends ControllerApi
                 DatabaseMongodb::_id($categories);
             array_push($filters, $filterCategory);
         }
+        if (!empty($req['sort'])) {
+            $sort['$sort'] = $req['sort'];
+            array_push($filters, $sort);
+        }
         if (!empty($req['limit'])) {
             $skip['$skip'] = $req['skip'];
             $limit['$limit'] = $req['limit'];
             array_push($filters, $skip, $limit);
         }
+
 
         if (!empty($req['count'])) {
             array_push($filters, [
@@ -186,7 +191,7 @@ class ProductController extends ControllerApi
         $checkUrl =  $url->validate(['name' => $this->req['url'], 'class' => self::class]);
         if ($checkUrl) {
             $product = new ProductModel();
-            $product->url_id = $url->insert($checkUrl);
+
             $dataProduct = [
                 'name' => $this->req['name'],
                 'category_id' => $this->req['category_id'],
@@ -199,8 +204,10 @@ class ProductController extends ControllerApi
 
             if ($checkProduct) {
                 $optionProduct = new OptionProductModel();
-                $optionProduct->detail_id = $product->insert();
+
                 $options = array_filter($this->req, fn ($option) => strpos($option, 'option') === 0, ARRAY_FILTER_USE_KEY);
+                $product->url_id = $url->insert();
+                $optionProduct->detail_id = $product->insert();
                 foreach ($options as $option) {
                     $dataOption = [
                         'type_ids' => $option['type_ids'],
@@ -208,6 +215,7 @@ class ProductController extends ControllerApi
                         'price' => $option['price'],
                     ];
                     if ($optionProduct->validate($dataOption)) {
+
                         $optionProduct->insert();
                     };
                 }

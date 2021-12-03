@@ -2,11 +2,11 @@
 
 namespace app\controllers;
 
-use app\core\controllers\ControllerApi;
+// use app\core\controllers\ControllerApi;
 use app\core\lib\Test;
 
 
-class ExampleController extends ControllerApi
+class ExampleController
 {
     private array $result = [];
 
@@ -23,6 +23,7 @@ class ExampleController extends ControllerApi
 
     public function __construct()
     {
+        echo "hello world";
     }
 
     public function index()

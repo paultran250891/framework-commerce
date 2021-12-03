@@ -1,0 +1,46 @@
+<div id="modal-news" class="">
+    <div hdClick="close()" class="close">&#x2715</div>
+    <div class="form modal-content-news">
+        <div data-name="url" data-type="input" class="field">
+            <input placeholder=" " type="text" class="value">
+            <label class="label" for="">Duong dan</label>
+            <div class="error"></div>
+        </div>
+
+        <div data-name="title" data-type="input" class="field">
+            <input placeholder=" " type="input" class="value">
+            <label class="label" for="">title</label>
+            <div class="error"></div>
+        </div>
+
+        <div data-name="description" data-type="input" class="field">
+            <input placeholder=" " type="input" class="value">
+            <label class="label" for="">Mo ta</label>
+            <div class="error"></div>
+        </div>
+
+        <div data-name="category_id" data-type="select" class="options field">
+            <select class="value" value="" name="" id="">
+                <option item="category" {select} value="{id}">{name}</option>
+            </select>
+            <div class="error"></div>
+        </div>
+
+        <div data-name="img" data-type="input" class="field select-img">
+            <button hdClick="showImg(dom)" class="btn-img">Chon anh</button>
+            <div class="img" style="background-image: url('');"></div>
+            <input class="value" value="" type="hidden">
+            <div class="error"></div>
+        </div>
+
+
+        <div class="field">
+            <label for="">Noi dung</label>
+            <textarea data-name="content" data-type="ckeditor" class="field" name=""
+                id="insert-news-content"></textarea>
+            <div class="error"></div>
+        </div>
+
+        <button hdClick="submitForm()" class="btn-submit">submit</button>
+    </div>
+</div>

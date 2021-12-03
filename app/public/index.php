@@ -4,14 +4,14 @@ use app\core\App;
 use app\core\response\Response;
 use app\core\Test;
 
-$rootPath =  dirname(__DIR__);
 
+$rootPath =  dirname(__DIR__);
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 require_once $rootPath . '/vendor/autoload.php';
 
 $env = file_exists($rootPath . '/local.env') ? "local.env" : null;
 
-// phpinfo();exit;
 
 $dotenv = Dotenv\Dotenv::createImmutable($rootPath, $env);
 $dotenv->load();
@@ -32,6 +32,9 @@ $conf = [
         'dbName' => $_ENV['DB_NAME_MONGO']
     ]
 ];
+
+
+
 
 try {
     new App($conf);

@@ -27,7 +27,6 @@ export class ModalProduct extends Render {
                 }
                 this.editor = editor
             })
-        // this.editor = ClassicEditor.instances
     }
 
     async category() {
@@ -115,7 +114,6 @@ export class ModalProduct extends Render {
         this.El.remove()
     }
 
-
     async submitForm() {
         new Loader(async () => {
             const form = new Form('/product/insert', this.El)
@@ -131,12 +129,7 @@ export class ModalProduct extends Render {
                     this.El.remove()
                 }
                 return
-
             }
-
         })
-
-
-
     }
 }

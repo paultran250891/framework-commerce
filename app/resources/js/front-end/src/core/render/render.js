@@ -22,22 +22,17 @@ export class Render extends Event {
                 ...domItem.childNodes
             )
         }
-
         return domItem.childNodes
     }
 
 
     setHtml(htmlText) {
-
         const parse = new DOMParser()
         return parse.parseFromString(htmlText, 'text/html').body
     }
 
     replaceDom(search, htmlText) {
-
-        const childs = [
-            ...this.setHtml(htmlText).childNodes
-        ]
+        const childs = [...this.setHtml(htmlText).childNodes]
         childs.forEach(child => {
             search.parentElement.insertBefore(child, search)
         })
@@ -47,9 +42,7 @@ export class Render extends Event {
     setDom(props) {
 
         if (!props) return this.El
-        // console.log(props)
         Object.keys(props).forEach(key => {
-
             const domItem = this.El.querySelector(`[item=${key}]`)
             if (Array.isArray(props[key])) {
                 let html = ``
@@ -62,7 +55,6 @@ export class Render extends Event {
                 })
                 this.replaceDom(domItem, html)
             } else {
-
                 let textHtml = domItem.outerHTML
                 textHtml = textHtml.replaceAll(`{${key}}`, props[key])
                 this.replaceDom(domItem, textHtml)
@@ -71,7 +63,6 @@ export class Render extends Event {
     }
 
     render(props) {
-        // console.log(this.html)
         this.El = this.setHtml(this.html).firstChild
         this.itemAll = [...this.El.querySelectorAll('[item]')]
         this.setDom(props)

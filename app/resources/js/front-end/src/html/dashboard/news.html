@@ -1,0 +1,45 @@
+<div class="dashboard-news">
+    <div class="show-row">
+        <label for="">Hien so dong:</label>
+        <select hdclick="showRow(dom)" name="" id="">
+            <option selected value="2">2</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+        </select>
+
+        <select hdclick="categoryShow(dom)" class="category" name="" id="">
+
+            <option item="category" {select} value="{id}">{name}</option>
+        </select>
+
+
+        <div class="add-news">
+            <button hdClick="addNews()">+ Them Tin Tuc</button>
+        </div>
+    </div>
+    <div class="header news-detail">
+        <div class="stt">STT</div>
+        <div hdClick="filter('category_id', dom)" data-sort="1" class="name filter">Ten<span
+                class="material-icons">sort</span>
+        </div>
+        <div hdClick="filter('_id', dom)" data-sort="1" class="day filter">Ngay<span class="material-icons">sort</span>
+        </div>
+        <div hdClick="filter('title', dom)" data-sort="1" class="title-news filter">Tieu De<span
+                class="material-icons">sort</span>
+        </div>
+        <div class="delete">xoa</div>
+    </div>
+    <div class="ctn-show-news-detail">
+        <div item="news" class="news-detail">
+            <div class="stt">{stt}</div>
+            <div class="name">{name}</div>
+            <div class="day">{id}</div>
+            <div class="title-news">{title}</div>
+            <button hdClick="delete('{id}')" class="delete">xoa</button>
+        </div>
+
+    </div>
+    <div class="ctn-pagination">
+
+    </div>
+</div>

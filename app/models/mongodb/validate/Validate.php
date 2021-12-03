@@ -91,6 +91,11 @@ abstract class Validate
                 if (is_array($value)) {
                     $this->{$attr} = array_map(fn ($id) => DatabaseMongodb::_id($id), $value);
                 } else {
+
+                    if (!DatabaseMongodb::_id($value)) {
+                        $this->addError($attr, "Loi khong ton tai trong db");
+                        break;
+                    }
                     $this->{$attr} = DatabaseMongodb::_id($value);
                 }
             } else {

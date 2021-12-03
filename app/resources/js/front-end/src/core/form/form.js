@@ -12,8 +12,9 @@ export class Form {
 
         return this.El.querySelectorAll('.field[data-type][data-name]')
             .forEach(field => {
-                // console.log(field.dataset.type)
+
                 this.data[field.dataset.name] = this[field.dataset.type](field)
+                // console.log(this.data)
             })
     }
 
@@ -40,8 +41,9 @@ export class Form {
             url: this.url,
             data: this.data
         })
+        console.log(res)
         this.res = JSON.parse(res)
-        console.log(this.res.response)
+
         this.setError(this.res)
     }
 
@@ -54,6 +56,7 @@ export class Form {
             field.querySelector('.error').innerHTML = error
             return
         }
+
         return field.querySelector('select').value || ''
 
     }
@@ -91,7 +94,9 @@ export class Form {
     async submit() {
         this.setValue()
         await this.fetch()
+        console.log(this.data)
         return this.res.response
+
     }
 
 }

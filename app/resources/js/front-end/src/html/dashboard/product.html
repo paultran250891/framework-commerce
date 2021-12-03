@@ -10,8 +10,12 @@
         <button hdClick="add()" class="add-product">+ Them San Pham Moi</button>
     </div>
     <div class="header product-detail">
-        <div class="stt ">STT</div>
-        <div class="name ">Ten san pham</div>
+        <div hdClick="filter('_id' ,dom)" data-sort="1" class="stt filter">STT <span class="material-icons">
+                sort
+            </span></div>
+        <div hdClick="filter('name' ,dom)" data-sort="1" class="name filter">Ten san pham<span class="material-icons">
+                sort
+            </span></div>
         <div class="img ">Anh dai dien</div>
         <div class="options ">Options</div>
         <div class="delete ">Xoa</div>

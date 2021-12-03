@@ -13,6 +13,7 @@ export class DashboardProduct extends Render {
     states = {
         products: []
     }
+    sort = { _id: -1 }
     constructor() {
         super()
         this.html = require('../../html/dashboard/product.html').default
@@ -28,6 +29,7 @@ export class DashboardProduct extends Render {
                 action: 'option',
                 skip: skip,
                 limit: this.limit,
+                sort: this.sort,
             }
         })).response
         // console.log(products)
@@ -98,6 +100,14 @@ export class DashboardProduct extends Render {
                 }
             })
         }
+    }
+
+    filter(sort, dom) {
+        const value = +dom.dataset.sort
+        this.sort = { [sort]: value }
+        dom.dataset.sort = (value == 1) ? -1 : 1
+        this.setStates()
+        this.pagination()
     }
 
 }

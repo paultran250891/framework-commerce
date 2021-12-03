@@ -22,7 +22,7 @@ class DatabaseMongodb
     }
 
     public static function _id($_id)
-    {   
+    {
         return new \MongoDB\BSON\ObjectID($_id);
     }
 }
