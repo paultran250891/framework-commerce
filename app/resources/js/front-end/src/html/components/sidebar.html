@@ -1,9 +1,14 @@
-<div id="sidebar" render="Sidebar">
-    <div item="ctn" class="ctn-sidebar" >
-        <div class="ctn-item-sidebar" >
+<div hdClick="close()" id="sidebar" render="Sidebar">
+    <div item="ctn" class="ctn-sidebar">
+        <div class=" close">
+            <span class="material-icons">close</span>
+            <div class="name"> Dong</div>
+        </div>
+
+        <div class="ctn-item-sidebar">
             <a href="{url}" class="{url} item-sidebar" item="itemSidebar">
-                <span  class="material-icons " >{icon}</span>
-                <div  class="name " name >{label}</div>
+                <span class="material-icons ">{icon}</span>
+                <div class="name " name>{label}</div>
             </a>
         </div>
     </div>

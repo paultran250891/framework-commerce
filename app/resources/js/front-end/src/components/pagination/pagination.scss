@@ -1,10 +1,16 @@
-.ctn-pagination{
-    .pagination{
-        margin-top: 1rem;
-        text-align: center;
-        
-        button{
-            margin: .5rem;
-        }
+.ctn-pagination {
+  .pagination {
+    display: flex;
+    margin-top: 1rem;
+    text-align: center;
+
+    justify-content: center;
+    button {
+      margin: 0.5rem;
+      font-size: 1rem;
+      border-radius: 100%;
+      width: 2rem;
+      height: 2rem;
     }
+  }
 }

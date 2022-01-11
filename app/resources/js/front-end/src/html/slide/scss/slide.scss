@@ -1,0 +1,49 @@
+.slide {
+  position: relative;
+  margin: auto;
+  .wrapper {
+    overflow: hidden;
+    margin: auto;
+    border-radius: 10px;
+  }
+  .ctn-slide {
+    display: flex;
+    transform: translateX(0);
+    transition: all 0.2s;
+  }
+  .number-slide {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    transform: translate(-50%, 100%);
+    button {
+      margin: 0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 0.8rem;
+      border-radius: 50%;
+    }
+  }
+  i {
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    background: var(--text-a);
+    z-index: 1;
+    opacity: 0.3;
+    color: var(--bg-a);
+    &:hover {
+      opacity: 0.8;
+    }
+    &.next {
+      right: 0px;
+      transform: translate(50%, -50%);
+    }
+    &.before {
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

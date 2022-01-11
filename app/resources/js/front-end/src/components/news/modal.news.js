@@ -3,8 +3,8 @@ import { Loader } from "../../core/loader/loader";
 import { ImgModal } from "../../core/modal/img.modal";
 import { Modal } from "../../core/modal/modal";
 import { Render } from "../../core/render/render";
-import { MyUploadAdapter } from "../../core/upload/MyUploadAdapter";
-import ClassicEditor from "../ckeditor/build/ckeditor";
+// import { MyUploadAdapter } from "../../core/upload/MyUploadAdapter";
+// import ClassicEditor from "../ckeditor/build/ckeditor";
 require('../../html/news/scss/modal.news.scss')
 
 export class ModalNews extends Render {
@@ -16,13 +16,13 @@ export class ModalNews extends Render {
     }
 
     async setStates() {
-        ClassicEditor.create(this.El.querySelector('#insert-news-content'))
-            .then(editor => {
-                editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
-                    return new MyUploadAdapter(loader, 'product')
-                }
-                this.editor = editor
-            })
+        // ClassicEditor.create(this.El.querySelector('#insert-news-content'))
+        //     .then(editor => {
+        //         editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+        //             return new MyUploadAdapter(loader, 'product')
+        //         }
+        //         this.editor = editor
+        //     })
     }
 
     async getDom() {

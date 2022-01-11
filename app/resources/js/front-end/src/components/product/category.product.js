@@ -15,7 +15,7 @@ export class CategoryProduct extends Render {
         super()
         this.id = id
         this.types = types
-        this.limit = 1
+        this.limit = 2
         this.parent = parent
     }
 

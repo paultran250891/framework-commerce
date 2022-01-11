@@ -1,13 +1,5 @@
 <div class="ctn-product-detail">
-    <div item="slide" class="slide">
-        <div class="show-img img" style="background-image: url('/img/product/xiaomi11_1.jpg');"></div>
-        <div class="ctn-img">
-            <div item="imgs" hdclick="showImg('{img}')" class="img detail-img" style="background-image: url('{img}');">
-            </div>
-        </div>
-
-    </div>
-
+    <div class="ctn-slide-product"></div>
     <div class="information-product">
 
         <h1 item="name">{name}</h1>
@@ -45,11 +37,10 @@
                 <input hdBlur="number(dom)" class="value-quantity-cart" type="text" value="1">
                 <button hdClick="plus()" class=""> + </button>
             </div>
+            <button hdClick="addCart(dom)" value="" class="add-cart-product fl ct-r ct-c">
+                <span class="material-icons">add_shopping_cart</span><span>Them</span>
+            </button>
         </div>
-
-        <button hdClick="addCart(dom)" value="" class="add-cart-product fl ct-r ct-c">
-            <span class="material-icons">add_shopping_cart</span><span>Them vao gio hang</span>
-        </button>
 
     </div>
 

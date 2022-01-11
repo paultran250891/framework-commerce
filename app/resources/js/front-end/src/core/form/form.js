@@ -29,8 +29,8 @@ export class Form {
             // console.log(error)
             field.querySelector('.error').innerHTML = error
             field.querySelector('label') &&
-                (field.querySelector('label').style.color = 'var(--colorError)')
-            field.querySelector('input').style.border = '1px solid var(--colorError)'
+                (field.querySelector('label').style.color = 'var(--error)')
+            field.querySelector('input').style.border = '1px solid var(--error)'
             return
         }
         return field.querySelector('input').value || ''

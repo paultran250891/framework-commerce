@@ -1,3 +1,4 @@
+import { Slide } from "../../components/slide/slide";
 import { App } from "../../core/app";
 import { Modal } from "../../core/modal/modal";
 import { Render } from "../../core/render/render";
@@ -14,12 +15,14 @@ export class DetailProductView extends Render {
             name: data.name,
             content: data.content,
             options: this.setOption(data.options),
-            imgs: data.imgs.filter((img, id) => (id <= 4))
-                .map(img => ({ img: img }))
         }
         this.render(this.state)
+
+        this.El.querySelector('.ctn-slide-product').appendChild(
+            this.slide(data.imgs.filter((img, id) => (id <= 4)))
+        )
+
         this.input = this.El.querySelector('input')
-        this.chat()
     }
 
     minus() {
@@ -28,6 +31,12 @@ export class DetailProductView extends Render {
 
     plus() {
         this.input.value++
+    }
+
+    slide(imgs) {
+        const slide = new Slide(imgs)
+        return slide.El
+
     }
 
     number(dom) {
@@ -71,6 +80,7 @@ export class DetailProductView extends Render {
                 .join(' - ')
         }))
     }
+
     choose(price, id, dom, img) {
         const option = dom.innerHTML.trim()
         const data = {
@@ -87,30 +97,7 @@ export class DetailProductView extends Render {
         this.El.querySelector('.add-cart-product')
             .setAttribute('hdClick', `addCart(${JSON.stringify(data)})`)
         this.El.querySelector('.price-product .item-2').innerHTML = price
-        this.showImg(img)
-    }
-
-    showImg(img) {
-        this.El.querySelector('.show-img').style.backgroundImage = `url(${img})`
-    }
-
-    async chat() {
-        // const socket = new WebSocket('ws://framework-commerce.tk/chat:8080')
-        // socket.addEventListener('open', function (event) {
-        //     socket.send('Hello Server!');
-        // });
-
-        // // Listen for messages
-        // socket.addEventListener('message', function (event) {
-        //     console.log('Message from server ', event.data);
-        // });
-
-
-
 
     }
-
-
-
 
 }

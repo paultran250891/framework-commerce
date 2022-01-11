@@ -1,60 +1,118 @@
 .ctn-products {
-    margin-bottom: 3rem;
-    .title{
-        margin-bottom: 1rem;
-        text-align: left;
-        color: var(--colorActive);
-        font-size: 2rem;
+  border-radius: 10px;
+  padding: 1rem;
+  //   margin-top: 1rem;
+  background: var(--bg-c);
+  .show-products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    //   border: 1px solid;
+    gap: 10px 10px;
+  }
+  h3.name {
+    color: var(--primary);
+  }
+  .detail-product {
+    background: var(--bg-d);
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    align-items: center;
+
+    .price {
+      background: var(--primary);
+      border-radius: 10px;
+      color: white;
+
+      margin-top: auto;
     }
-    
-    .show-products{
-        display: grid;
-        margin: auto;
-        grid-template-columns: repeat(auto-fit, 20rem );
-        gap: 20px 20px;
+    .option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .type {
+        div {
+          background: var(--bg-e);
+          border-radius: 10px;
+        }
+      }
     }
-    .detail-product{
-        background: var(--bg-c);
-        padding-bottom: .5rem;
-        border-radius: 10px;
-        overflow: hidden;
-        cursor: pointer;
-         text-align: center;
-         transition: all .2s;
-        .img{
-            padding-top: 100%;
-            width: 100%;
-            background-position: center;
-            transition: background 0.3s;
-        }
-        .name{
-           
-            margin: .5rem 0;
-            color: var( --colorActive);
-        }
-        .price{
-            color: var(--colorError);
-            font-size: 1.5rem;
-           
-        }
-        .option{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            & div{
-               padding: .5rem;
-               margin-bottom: .5rem;
-                background: var(--bg-b);
-                border-radius: 10px;
-                color: var(--text-c);
-            }
-        }
-        &:hover {
-            box-shadow: 1px 1px 1px 1px var(--text-a);
-            .img {
-                background-size: 105% 105%;
-            }
-        }
+    &:hover {
+      box-shadow: 0px 0px 6px 2px var(--bg-f);
     }
-    
+  }
+}
+@media screen and (min-width: 769px) {
+  .ctn-products {
+    margin-bottom: 1rem;
+
+    .detail-product {
+      width: 300px;
+      margin-left: 1rem;
+      padding-bottom: 1rem;
+      .price {
+        width: 200px;
+      }
+      .name {
+        margin: 0.5rem 0;
+      }
+      .option {
+        .type {
+          div {
+            font-size: 15px;
+
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+      .img {
+        height: 200px;
+        padding: 1rem;
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .ctn-products {
+    margin-bottom: 1rem;
+    .name {
+      font-size: 1rem;
+    }
+
+    .detail-product {
+      padding-bottom: 0.5rem;
+      width: 100%;
+      .price {
+        width: 100px;
+      }
+      .name {
+        margin: 0.2rem 0;
+      }
+      .option {
+        .type {
+          div {
+            font-size: 10px;
+
+            padding: 0.2rem;
+            margin-bottom: 0.1rem;
+          }
+        }
+      }
+      .img {
+        height: 100px;
+        padding: 0.5rem;
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
 }

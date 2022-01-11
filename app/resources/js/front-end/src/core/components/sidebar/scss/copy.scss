@@ -1,0 +1,26 @@
+.ctn-sidebar {
+  .ctn-item-sidebar {
+    width: 15rem;
+    .item-sidebar {
+      text-decoration: none;
+      color: var(--text-a);
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 10px;
+      display: flex;
+      .name {
+        display: flex;
+        font-size: 1.5rem;
+        margin-left: 1rem;
+      }
+      &:hover {
+        background: var(--bg-c);
+        color: var(--text-c);
+      }
+      &.active {
+        background: var(--bg-a);
+        color: var(--text-c);
+      }
+    }
+  }
+}

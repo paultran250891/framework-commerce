@@ -1,68 +1,66 @@
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    &:hover {
-        &::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 10px;
-        }
-        &::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: inherit;
 }
+button {
+  border-radius: 10px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  border: 1px solid var(--primary);
+  background: white;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  color: var(--primary);
+
+  &:hover {
+    background: var(--primary);
+
+    color: white;
+  }
+}
 input {
-    padding: 10px;
-    font-size: 1.2em;
-    background-color: var(--bg-a);
-    border: 1px solid var(--text-a);
-    color: var(--text-b);
-    position: relative;
-    overflow: auto;
-    &:focus {
-        outline: none;
-        // border: 1px solid var(--colorActive);
-    }
+  outline: none;
+  border: 1px solid var(--text-f);
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 0.5rem;
 }
 
-button,.btn {
-    color: var(--text-btn);
-    border: 1px solid var(--text-btn);
-    background: var(--bg-btn);
-    cursor: pointer;
-    height: auto;
-    outline: none;
-    padding: 0.5rem;
-    border-radius: 5px;
-    font-weight: bold;
-    margin: 0;
-    &:hover,
-    &.active {
-        background: var(--text-btn);
-        color: var(--bg-btn);
-        border: 1px solid var(--text-btn);
+@media screen and (min-width: 769px) {
+  * {
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
     }
-}
-
-@media screen and(min-width: 1024px) {
     ::-webkit-scrollbar {
-        width: 10px;
+      width: 10px;
     }
 
     /* Track */
     ::-webkit-scrollbar-track {
-        background: initial;
+      background: initial;
 
-        //
+      //
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        background: var(--text-a);
+      border-radius: 10px;
+      background: var(--text-a);
     }
-    /* Handle on hover */
+  }
 }

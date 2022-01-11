@@ -18,38 +18,38 @@ export class App {
     static public
     checkLogin = false
 
-    constructor(props){
-        App.token       = props.token
-        App.public      = this
-        this.store      = new Store(App.token)
-        this.nav        = new Nav(this.store)
-        this.sidebar    = new Sidebar(this.store)
-        this.content    = new Content(this.store)
+    constructor(props) {
+        App.token = props.token
+        App.public = this
+        this.store = new Store(App.token)
+        this.nav = new Nav(this.store)
+        this.sidebar = new Sidebar(this.store)
+        this.content = new Content(this.store)
         this.cart = new Cart()
         this.cart.count()
     }
 
-    render(state){
+    render(state) {
         this.sidebar.change(state.sidebar)
         this.content.change(state.content)
         this.nav.change(state.nav)
     }
 
-    fetch (headers) {
+    fetch(headers) {
         return fetchApi(headers, App.token)
     }
 
-    handle(selector, handleCl){
+    handle(selector, handleCl) {
         $('#app').onclick = (e) => {
             e.target.closest(selector) && handleCl(e)
         }
     }
 
-    async login(){
+    async login() {
         const res = JSON.parse(await this.fetch({
             url: '/user/show'
         })).response
-        if(res){
+        if (res) {
             this.sidebar.change({
                 addItem: [
                     { url: '/dashboard', icon: 'dashboard', label: 'Quan ly' },
@@ -57,12 +57,12 @@ export class App {
                     { url: '/profile', icon: 'manage_accounts', label: 'profile' },
                     { url: '/user?action=logout', icon: 'logout', label: 'thoat' },
                 ]
-            }) 
+            })
             this.nav.change({ login: res })
             this.checkLogin = true
         } else {
             this.nav.change({ logout: true })
-            this.sidebar.change({ removeItem: ['/cart','/profile','/user?action=logout','/dashboard']}) 
+            this.sidebar.change({ removeItem: ['/cart', '/profile', '/user?action=logout', '/dashboard'] })
             this.checkLogin = false
         }
     }
@@ -71,7 +71,7 @@ export class App {
         await this.login()
         this.router = new Router()
         this.router.controller(window.location.pathname)
-        this.handle('a[href]', async (e)=>{
+        this.handle('a[href]', async (e) => {
             e.preventDefault()
             this.router.redirect(e.target.closest('a').href)
         })

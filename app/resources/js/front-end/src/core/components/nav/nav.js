@@ -3,43 +3,56 @@ import { Render, render } from "../../render/render"
 require('./scss/nav.scss')
 
 
-export class Nav extends Render{
-    
+export class Nav extends Render {
+
     #states
     html = require('../../../html/components/nav.html').default
 
-    constructor(store){
+    constructor(store) {
         super()
         this.store = store
         this.#states = store.getStore('nav')
-        this.#render()   
-    }
-    
-    login(user){
-        this.El.querySelector('.show-logout').style.display = 'none'
-        this.El.querySelector('.show-login').style.display = 'block'
-        this.El.querySelector('.show-login .img').style.backgroundImage = `url(${user.img})`
+        this.#render()
     }
 
-    logout(){
+    login(user) {
+        this.El.querySelector('.show-logout').style.display = 'none'
+        this.El.querySelector('.show-login').style.display = 'block'
+        this.El.querySelector('.show-login .img').src = `${user.img}`
+    }
+
+    logout() {
         this.El.querySelector('.show-logout').style.display = ''
         this.El.querySelector('.show-login').style.display = 'none'
     }
-   
+
     setCount(count) {
-        $('#nav .total-count-cart').innerText = count 
+        $('#nav .total-count-cart').innerText = count
     }
 
-    change(state){
+    change(state) {
         // console.log(state)
-        
+
         state && state.login && this.login(state.login)
         state && state.logout && this.logout()
     }
 
-    #render(){
+    #render() {
         this.render(this.#states)
         $('#app').appendChild(this.El)
+    }
+    open(e) {
+        $('#sidebar').style.width = '100vw'
+        $('#sidebar').style.height = '100vh'
+    }
+
+    changeTheme() {
+
+        if ($('html').dataset.theme == 'dark') {
+            $('html').dataset.theme = 'light'
+        } else {
+            $('html').dataset.theme = 'dark'
+        }
     }
 
 }

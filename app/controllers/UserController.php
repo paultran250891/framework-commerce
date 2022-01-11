@@ -104,7 +104,7 @@ class UserController extends ControllerApi
         $client = new Google_Client();
         $client->setClientId('531537995062-dr8ie36mgr8p4hesnaql8fba31ad9is1.apps.googleusercontent.com');
         $client->setClientSecret('ZN63xGlaWM5OsgtaZ0o0Jw5c');
-        $client->setRedirectUri('https://framework-commerce.tk/logingg');
+        $client->setRedirectUri('https://localhost/logingg');
         $client->addScope("email");
         $client->addScope("profile");
         if ($code) {

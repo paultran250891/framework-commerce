@@ -1,60 +1,53 @@
 :root {
-    --height-menu: 3em;
-    --margin: 1em;
-    --padding: 0.5em;
-    --colorActive: #6a5af9;
-    --colorError: #b00020;
+  --primary: #0062cc;
+  --success: #28a745;
+  --error: #dc3545;
 }
 
 html {
-    font-size: 16px;
-
-    --height-display: 99vh;
-    --margin: 2em;
-    --color-click: #585858;
-    --color-headings: #0077ff;
-    //them default
-    --bg-active: rgb(100, 100, 100);
-    --color-active: rgb(255, 255, 255);
-    --bg-btn: #ffffff;
-    --text-btn: #0077ff;
+  &[data-theme="light"] {
     --bg-a: #ffffff;
-    --bg-b: #f1f1f1;
-    --bg-c: #dbdbdb;
-    --text-a: #3d3d3d;
-    --text-b: #2b2b2b;
-    --text-c: #1a1a1a;
-    --color-text: #181818;
-    //end theme
-    &[data-theme="light"] {
-        --bg-active: rgb(100, 100, 100);
-        --color-active: rgb(255, 255, 255);
-        --bg-btn: #ffffff;
-        
-        --bg-a: #ffffff;
-        --bg-b: #f1f1f1;
-        --bg-c: #dbdbdb;
-        --text-a: #3d3d3d;
-        --text-b: #1d1d1d;
-        --text-c: #000000;
-        --color-text: #181818;
-    }
-    &[data-theme="dark"] {
-        --bg-active: rgb(92, 92, 92);
-        --text-active: rgb(255, 255, 255);
-        --bg-btn: #ffffff;
-        
-        --bg-a: #000000;
-        --bg-b: #181818;
-        --bg-c: #202020;
-        --text-a: #999999;
-        --text-b: #e1e1e1;
-        --text-c: #ffffff;
-        --color-text: #f5f5f5;
-    }
+    --bg-b: #eeeeee;
+    --bg-c: #dddddd;
+    --bg-d: #cccccc;
+    --bg-e: #bbbbbb;
+    --bg-f: #aaaaaa;
+    --text-f: #555555;
+    --text-e: #444444;
+    --text-d: #333333;
+    --text-c: #222222;
+    --text-b: #111111;
+    --text-a: #000000;
+  }
+  &[data-theme="dark"] {
+    --text-a: #ffffff;
+    --text-b: #eeeeee;
+    --text-c: #dddddd;
+    --text-d: #cccccc;
+    --text-e: #bbbbbb;
+    --text-f: #aaaaaa;
+    --bg-f: #555555;
+    --bg-e: #444444;
+    --bg-d: #333333;
+    --bg-c: #222222;
+    --bg-b: #111111;
+    --bg-a: #000000;
+  }
+  color: var(--text-c);
+  background: var(--bg-a);
 }
-body {
-    background-color: var(--bg);
-    color: var(--color-text);
-    background-color: var(--bg-a);
+
+h1 {
+  font-size: 20px;
+  color: var(--primary);
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
 }

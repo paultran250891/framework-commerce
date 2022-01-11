@@ -1,35 +1,38 @@
 <div id="nav">
     <div class="ctn-nav">
         <div class="nav-start nav-layout">
-            <div class="nav-item menu">
-                <span class="material-icons" >menu</span>
-            </div>
-            <div class="nav-item logo">
-                <div class="img" style="background-image: url('./img/logo.jpg')"></div>
-            </div>
+            <span hdClick="open(e)" class="material-icons open">menu</span>
+            <a href="/home" class="home">
+                <span class="material-icons">home</span>
+                <h3 class="name-web">Shop Dien Tu</h3>
+            </a>
+
         </div>
         <div class="nav-center nav-layout">
             <div form id="form-nav-search" class="form">
                 <div field name="" class="ctn-search">
-                    <input class="input" placeholder="Tìm kiếm" type="text" />
-                    <button type="submit"><span class="material-icons" >search</span></button>
+                    <input class="input-search" placeholder="Tìm kiếm" type="text" />
+                    <span class="material-icons">search</span>
+                    <!-- <span>test</span> -->
+
                 </div>
             </div>
         </div>
         <div class="nav-end nav-layout">
             <div class="ctn-check-theme nav-item">
                 <input id="checbox-change-theme" type="checkbox" checked />
-                <label class="checbox-change-theme" for="checbox-change-theme"></label>
+                <label hdClick="changeTheme()" class="checbox-change-theme" for="checbox-change-theme"></label>
             </div>
             <a href="/cart" class="nav-item cart">
-                <span class="material-icons " >shopping_bag</span>
-                <p class="total-count-cart" item="count" >{count}</p>
+                <span class="material-icons ">shopping_bag</span>
+                <p class="total-count-cart" item="count">{count}</p>
             </a>
             <a href="/user?action=login" class="nav-item show-logout">
-                <span class="material-icons" >person</span>
+                <span class="material-icons">person</span>
             </a>
             <div class="nav-item show-login">
-                <div class="img" item="img" style="background-image: url('{img}')"></div>
+                <img class="img" item="img" src="{img}" alt="">
+                <!-- <div class="img" item="img" style="background-image: url('{img}')"></div> -->
             </div>
         </div>
     </div>

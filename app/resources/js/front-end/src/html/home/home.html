@@ -1,26 +1,38 @@
-<div id="news" class="ctn-new">
-    <div class="slide-news">
-        <h1>Tin Moi Nhat Trong Ngay</h1>
-        <div class="slide-banner-1 " >
-            <div class="img-banner" style="background-image: url('/img/panner/panner6.jpg')"></div>
+<div id="home" class="ctn-new">
+    <div class="slide-news slide">
+
+        <div class="wrapper">
+            <i hdClick="changeSilde(1)" class="material-icons next">navigate_next</i>
+            <div class="ctn-slide" data-number="1">
+                <img src="https://192.168.1.3/img/panner/panner1.jpg" alt="">
+                <img src="https://192.168.1.3/img/panner/panner2.jpg" alt="">
+                <img src="https://192.168.1.3/img/panner/panner3.jpg" alt="">
+                <img src="https://192.168.1.3/img/panner/panner4.jpg" alt="">
+            </div>
+            <i hdClick="changeSilde(-1)" class="material-icons before">navigate_before</i>
         </div>
-        <div class="slide-banner-2" >
-            <div class="img-banner" style="background-image: url('/img/panner/panner7.jpg')"></div>
+
+        <div class="number-slide">
+            <button class="active" hdClick="btnSlide(1, dom)">1</button>
+            <button hdClick="btnSlide(2, dom)">2</button>
+            <button hdClick="btnSlide(3, dom)">3</button>
+            <button hdClick="btnSlide(4, dom)">4</button>
         </div>
+
     </div>
     <div class="ctn-category-news category">
-        <h1 class="">danh muc tin tuc</h1>
+        <h2 class="">danh muc tin tuc</h2>
         <a href="/news?category={_id}&name={name}" class="category-item" item="categoryNews">
-            <div class="img " style="background-image: url('{img}')"></div>
-            <div class="name-category">{name}</div>
+            <img src="https://192.168.1.3{img}" alt="">
+            <div class="name">{name}</div>
         </a>
     </div>
     <div class="ctn-category-product category">
-        <h1 class="">Danh muc san pham</h1>
+        <h2 class="">Danh muc san pham</h2>
         <a href="/product?category={_id}&name={name}" class="category-item" item="categoryProduct">
-            <div class="img " style="background-image: url('{img}')"></div>
-            <div class="name-category">{name}</div>
+            <img src="https://192.168.1.3{img}" alt="">
+            <div class="name">{name}</div>
         </a>
     </div>
-    
+
 </div>

@@ -1,67 +1,45 @@
-@media screen and (min-width: 1024px) {
-    #app {
-        font-size: 16px;
-        // height: 100vh;
-        display: grid;
-        color: var(--color-text);
-        background-color: var(--bg-a);
-        grid-template-columns: min-content 1fr;
-        grid-template-rows: 3em 3em calc(100vh - 6em) auto;
-
-        #nav {
-            width: 100%;
-            background-color: var(--bg-b);
-            height: 3em;
-            grid-column: 1/3;
-            color: var(--text-b);
-            position: sticky;
-            top: 0;
-            z-index: 2;
-            // display: none;
-        }
-        #sidebar {
-            background: red;
-            color: var(--text-b);
-            background-color: var(--bg-b);
-            grid-column: 1/2;
-            grid-row: 2/4;
-            position: sticky;
-            height: 100%;
-            top: 3em;
-            z-index: 1;
-            overflow-x: hidden;
-            overflow-y: hidden;
-        }
-
-        #menu {
-            width: 100%;
-            grid-column: 2/3;
-            grid-row: 2/3;
-            background: yellow;
-            color: var(--text-a);
-            background-color: var(--bg-a);
-            height: 3em;
-            border-top: 1px solid;
-            border-bottom: 1px solid;
-            position: sticky;
-            top: var(--height-menu);
-            z-index: 10;
-            overflow: hidden;
-            .ctn-menu {
-            }
-        }
-        #content {
-            grid-row: 2/5;
-            grid-column: 2/3;
-
-            height: auto;
-
-            background-color: var(--bg-a);
-            color: var(--text-a);
-
-            padding-bottom: 1rem;
-            .ctn-content {
-            }
-        }
+@media screen and (min-width: 768px) {
+  #app {
+    display: grid;
+    grid-template-columns: 12rem auto;
+    #nav {
+      z-index: 1;
+      grid-column: span 2;
+      height: 3rem;
     }
+    #content {
+      grid-column: 2/3;
+      overflow-x: auto;
+      overflow-y: auto;
+      height: calc(99vh - 3rem);
+      background: var(--bg-b);
+    }
+    #sidebar {
+      grid-column: 1/2;
+      grid-row: 2/3;
+      height: 100%;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  #app {
+    #nav {
+      display: block;
+      z-index: 1;
+      height: 3rem;
+    }
+    #content {
+      height: calc(99vh - 7rem);
+      overflow-x: auto;
+    }
+    #sidebar {
+      position: fixed;
+      top: 0;
+      z-index: 2;
+      background: rgba($color: #000000, $alpha: 0.5);
+      width: 0;
+      transition: all 0.3s;
+      overflow: hidden;
+    }
+  }
 }

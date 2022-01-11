@@ -1,27 +1,76 @@
-.ctn-sidebar {
-    .ctn-item-sidebar{
-        width: 15rem;
-        .item-sidebar{
-            text-decoration: none;
-            color: var(--text-a);
-            margin: 1rem;
-            padding: 1rem;
-            border-radius: 10px;
-            display: flex;
-            .name{
-                display: flex;
-                font-size: 1.5rem;
-                margin-left: 1rem;
-            }
-            &:hover{
-                background: var(--bg-c);
-                color: var(--text-c);
-            }
-            &.active{
-                background: var(--bg-a);
-                color: var(--text-c);
-            }
-        }
+#sidebar .ctn-sidebar {
+  width: 250px;
+  height: 100%;
+  background: var(--bg-c);
+  .name {
+    margin-left: 1rem;
+  }
+  .ctn-item-sidebar {
+    .item-sidebar {
+      color: var(--text-d);
+
+      display: flex;
+      border-radius: 10px;
+
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
     }
-   
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #sidebar .ctn-sidebar {
+    .close {
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      cursor: pointer;
+      border-bottom: 1px solid var(--bg-a);
+      height: 3rem;
+      text-align: left;
+    }
+    .name {
+      margin-left: 1rem;
+    }
+    .ctn-item-sidebar {
+      margin-top: 1rem;
+      .item-sidebar {
+        background: var(--bg-d);
+        display: flex;
+        border-radius: 10px;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        margin: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #sidebar .ctn-sidebar {
+    padding-top: 1rem;
+
+    .close {
+      display: none;
+    }
+    .ctn-item-sidebar {
+      font-size: 1.2rem;
+
+      .item-sidebar {
+        display: flex;
+        border-radius: 10px;
+
+        align-items: center;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        &:hover {
+          background: var(--bg-a);
+          color: var(--text-a);
+        }
+      }
+    }
+  }
 }

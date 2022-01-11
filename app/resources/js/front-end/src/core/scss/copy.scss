@@ -1,0 +1,142 @@
+@media screen and (min-width: 1024px) {
+  #app {
+    font-size: 16px;
+
+    display: grid;
+    color: var(--color-text);
+    background-color: var(--bg-a);
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: 3em 3em calc(100vh - 6em) auto;
+
+    #nav {
+      width: 100%;
+      background-color: var(--bg-b);
+      height: 3em;
+      grid-column: 1/3;
+      color: var(--text-b);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      // display: none;
+    }
+    #sidebar {
+      background: red;
+      color: var(--text-b);
+      background-color: var(--bg-b);
+      grid-column: 1/2;
+      grid-row: 2/4;
+      position: sticky;
+      height: 100%;
+      top: 3em;
+      z-index: 1;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+
+    #menu {
+      width: 100%;
+      grid-column: 2/3;
+      grid-row: 2/3;
+      background: yellow;
+      color: var(--text-a);
+      background-color: var(--bg-a);
+      height: 3em;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      position: sticky;
+      top: var(--height-menu);
+      z-index: 10;
+      overflow: hidden;
+      .ctn-menu {
+      }
+    }
+    #content {
+      grid-row: 2/5;
+      grid-column: 2/3;
+
+      height: auto;
+
+      background-color: var(--bg-a);
+      color: var(--text-a);
+
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #app {
+    width: 100%;
+    border: 2px solid red;
+  }
+  #sidebar {
+    width: 0;
+    border: 1px solid;
+    overflow: hidden;
+    background: var(--bg-c);
+    grid-row: 2;
+    transition: all 0.3s;
+    position: absolute;
+  }
+  #content {
+    // display: none;
+  }
+  #nav {
+    .close {
+      display: none;
+    }
+  }
+}
+
+html {
+  //   font-size: 16px;
+
+  --height-display: 99vh;
+  --margin: 2em;
+  --color-click: #585858;
+  --color-headings: #0077ff;
+  //them default
+  --bg-active: rgb(100, 100, 100);
+  --color-active: rgb(255, 255, 255);
+  --bg-btn: #ffffff;
+  --text-btn: #0077ff;
+  --bg-a: #ffffff;
+  --bg-b: #f1f1f1;
+  --bg-c: #dbdbdb;
+  --text-a: #3d3d3d;
+  --text-b: #2b2b2b;
+  --text-c: #1a1a1a;
+  --color-text: #181818;
+  //end theme
+  &[data-theme="light"] {
+    --bg-active: rgb(100, 100, 100);
+    --color-active: rgb(255, 255, 255);
+    --bg-btn: #ffffff;
+
+    --bg-a: #ffffff;
+    --bg-b: #f1f1f1;
+    --bg-c: #dbdbdb;
+    --text-a: #3d3d3d;
+    --text-b: #1d1d1d;
+    --text-c: #000000;
+    --color-text: #181818;
+  }
+  &[data-theme="dark"] {
+    --bg-active: rgb(92, 92, 92);
+    --text-active: rgb(255, 255, 255);
+    --bg-btn: #ffffff;
+
+    --bg-a: #000000;
+    --bg-b: #181818;
+    --bg-c: #202020;
+    --text-a: #999999;
+    --text-b: #e1e1e1;
+    --text-c: #ffffff;
+    --color-text: #f5f5f5;
+  }
+}
+body {
+  background-color: var(--bg);
+  color: var(--color-text);
+  background-color: var(--bg-a);
+}

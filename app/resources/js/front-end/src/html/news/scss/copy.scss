@@ -1,0 +1,122 @@
+@media screen and (min-width: 768px) {
+  .news {
+    width: 1000px;
+    margin: 1rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    .ctn-top {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px 20px;
+      :first-child {
+        grid-row: span 2;
+        grid-column: span 2;
+      }
+      .top {
+        padding-top: 70%;
+        cursor: pointer;
+        position: relative;
+        background-position: center;
+        transition: all 0.3s;
+        border-radius: 10px;
+        &:hover {
+          background-size: 105% 105%;
+          .content {
+            color: white;
+            opacity: 2;
+            .title {
+              color: white;
+            }
+          }
+          .background-gradient {
+            opacity: 0.9;
+            background-image: linear-gradient(transparent, black 60%);
+          }
+        }
+        .content {
+          position: absolute;
+          bottom: 0;
+          z-index: 1;
+          margin: 1rem;
+          opacity: 1;
+          .title {
+            text-align: left;
+            color: rgb(184, 184, 184);
+          }
+          .date {
+          }
+        }
+        .background-gradient {
+          position: absolute;
+          top: 0;
+          opacity: 0.5;
+          width: 100%;
+          height: 100%;
+          background-image: linear-gradient(transparent, black);
+        }
+      }
+    }
+
+    .show-news {
+      margin-top: 1rem;
+      background: var(--bg-b);
+      border-radius: 10px;
+      width: 75%;
+      margin-right: 20px;
+      padding: 1rem;
+      .header {
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        .title {
+          font-size: 1.5rem;
+          color: var(--colorActive);
+        }
+        select {
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+      }
+    }
+    .detail {
+      display: flex;
+      cursor: pointer;
+      margin-top: 1rem;
+      background: var(--bg-c);
+      border-radius: 10px;
+      overflow: hidden;
+      .img {
+        background-size: 100% 100%;
+        border-radius: 10px;
+        width: 40%;
+        padding-top: 28%;
+        background-position: center;
+        margin-right: 1rem;
+        transition: all 0.3s;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          text-align: left;
+          margin: 1rem 0;
+        }
+      }
+      &:hover {
+        .img {
+          background-size: 105% 105%;
+        }
+      }
+    }
+    .advertisement {
+      flex: 1;
+      border-radius: 10px;
+      background: var(--bg-b);
+      margin-top: 1rem;
+      align-self: stretch;
+      justify-self: stretch;
+    }
+  }
+}
